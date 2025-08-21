@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Kanban de Startups</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gerenciador Kanban</h1>
+    </header>
+
+    <div class="startup-actions">
+        <label for="startupSelect">Selecione uma Startup:</label>
+        <select id="startupSelect"></select>
+        <button id="addStartupBtn">Nova Startup</button>
+        <button id="loadBoardBtn">Carregar Kanban</button>
+        <button id="goToDashboardBtn">Ir para Dashboard</button>
+    </div>
+
+    <main class="kanban-board">
+        </main>
+
+    <div class="kanban-actions">
+        <button id="addColumnBtn">Adicionar Coluna</button>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Adicionar/Editar Tarefa</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <input type="hidden" id="columnId">
+                
+                <label for="taskTitle">Título:</label>
+                <input type="text" id="taskTitle" required>
+
+                <label for="taskType">Tipo:</label>
+                <input type="text" id="taskType" required>
+
+                <label for="taskPriority">Prioridade:</label>
+                <input type="text" id="taskPriority" required>
+
+                <label for="taskStartDate">Data de Início:</label>
+                <input type="date" id="taskStartDate" required>
+
+                <label for="taskDueDate">Prazo:</label>
+                <input type="date" id="taskDueDate" required>
+
+                <label for="taskAssignee">Responsável:</label>
+                <input type="text" id="taskAssignee" required>
+
+                <label for="taskObservations">Observações:</label>
+                <textarea id="taskObservations"></textarea>
+
+                <label for="taskLink">Link:</label>
+                <input type="url" id="taskLink">
+                
+                <button type="submit" id="saveTaskBtn">Salvar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
